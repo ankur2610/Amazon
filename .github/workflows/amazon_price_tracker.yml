@@ -31,8 +31,9 @@ jobs:
         run: |
           python analytics.py
 
-      - name: Commit and push results
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Automated update of price and analytics data"
-          branch: main
+     - name: Commit and push results
+  uses: stefanzweifel/git-auto-commit-action@v4
+  with:
+    commit_message: Automated update of price and analytics data
+    branch: main
+    push_options: --force-with-lease
