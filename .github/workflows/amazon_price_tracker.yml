@@ -2,12 +2,13 @@ name: Amazon Price Tracker
 
 on:
   schedule:
-    - cron: '30 4 * * *'  # Runs at 04:30 UTC = 10:00 IST daily
+    - cron: '30 4 * * *'   # 04:30 UTC = 10:00 IST
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -31,9 +32,9 @@ jobs:
         run: |
           python analytics.py
 
-     - name: Commit and push results
-  uses: stefanzweifel/git-auto-commit-action@v4
-  with:
-    commit_message: Automated update of price and analytics data
-    branch: main
-    push_options: --force-with-lease
+      - name: Commit and push results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated update of price and analytics data
+          branch: main
+          push_options: --force-with-lease
