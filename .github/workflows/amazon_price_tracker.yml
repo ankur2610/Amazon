@@ -37,3 +37,4 @@ jobs:
           commit_message: Update Amazon prices
           file_pattern: data/output/price_output.xlsx
           branch: main
+                    add_options: '-f'
