@@ -2,8 +2,8 @@ name: Amazon Price Tracker
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 08:00 UTC = 8:00 AM GMT  workflow_dispatch:
-    
+    - cron: '0 8 * * *'  # 08:00 UTC = 8:00 AM GMT
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -38,17 +38,16 @@ jobs:
           file_pattern: data/output/price_output.xlsx
           branch: main
           add_options: '-f'
-          
 
-              - name: Send email with attachment
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 587
-        username: ${{secrets.EMAIL_USERNAME}}
-        password: ${{secrets.EMAIL_PASSWORD}}
-        subject: Amazon Price Update - ${{github.run_id}}
-        to: bhalla.karishma@gmail.com
-        from: Amazon Price Tracker
-        body: Daily Amazon price update attached.
-        attachments: data/output/price_output.xlsx
+      - name: Send email with attachment
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          subject: Amazon Price Update - ${{github.run_id}}
+          to: bhalla.karishma@gmail.com
+          from: Amazon Price Tracker
+          body: Daily Amazon price update attached.
+          attachments: data/output/price_output.xlsx
