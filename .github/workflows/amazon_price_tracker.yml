@@ -5,6 +5,9 @@ on:
     - cron: '30 4 * * *'   # 04:30 UTC = 10:00 IST
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,10 +31,9 @@ jobs:
         run: |
           python scraper.py
 
-      - name: Commit and push ONLY the single output file
+      - name: Commit and push output file
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update price_output.xlsx
+          commit_message: Update Amazon prices
           file_pattern: data/output/price_output.xlsx
           branch: main
-          push_options: --force-with-lease
