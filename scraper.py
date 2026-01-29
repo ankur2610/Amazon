@@ -7,8 +7,7 @@ from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 # ---- CONFIG ----
 INPUT_XLSX = "data/input/Amazon Prices.xlsx"  # your current file in re
 oOUTPUT_XLSX = "data/output/price_output.xlsx"                # ONLY output file (fixed name)
-SHEET_NAME = "Combined"                                      # change if your sheet differs
-
+SHEET_NAME = "Sheet1"  # change if your sheet differs
 LINK_COL = 4  # Column D
 # ----------------
 
