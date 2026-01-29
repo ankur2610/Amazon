@@ -3,6 +3,7 @@ name: Amazon Price Tracker
 on:
   schedule:
     - cron: '0 8 * * *'  # 08:00 UTC = 8:00 AM GMT  workflow_dispatch:
+    
 
 permissions:
   contents: write
