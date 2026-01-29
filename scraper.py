@@ -5,8 +5,8 @@ from openpyxl import load_workbook
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 # ---- CONFIG ----
-INPUT_XLSX = "data/input/Price Comparison - 14Jan'26.xlsx"   # your current file in repo
-OUTPUT_XLSX = "data/output/price_output.xlsx"                # ONLY output file (fixed name)
+INPUT_XLSX = "data/input/Amazon Prices.xlsx"  # your current file in re
+oOUTPUT_XLSX = "data/output/price_output.xlsx"                # ONLY output file (fixed name)
 SHEET_NAME = "Combined"                                      # change if your sheet differs
 
 LINK_COL = 4  # Column D
