@@ -38,6 +38,7 @@ jobs:
           file_pattern: data/output/price_output.xlsx
           branch: main
           add_options: '-f'
+          
 
               - name: Send email with attachment
       uses: dawidd6/action-send-mail@v3
