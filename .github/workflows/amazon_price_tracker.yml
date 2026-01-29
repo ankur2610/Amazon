@@ -28,13 +28,10 @@ jobs:
         run: |
           python scraper.py
 
-      - name: Run analytics
-        run: |
-          python analytics.py
-
-      - name: Commit and push results
+      - name: Commit and push ONLY the single output file
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Automated update of price and analytics data
+          commit_message: Update price_output.xlsx
+          file_pattern: data/output/price_output.xlsx
           branch: main
           push_options: --force-with-lease
