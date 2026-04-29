@@ -40,7 +40,7 @@ jobs:
           git add -f data/output/price_output.xlsx
           git diff --staged --quiet && echo "No changes to commit" && exit 0
           git pull --rebase --strategy-option=ours origin main
-        git reset -- data/output/price_output.xlsx
+          git reset -- data/output/price_output.xlsx
           git add -f data/output/price_output.xlsx
           git commit -m "Update Amazon prices"
           git push origin main
